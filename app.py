@@ -22,12 +22,12 @@ input_data_examples = [
         "cog": 27
     },
     {
-       "chainring": 52,
-        "cog": 0
-    },
-    {
        "chainring": 0,
         "cog": 15
+    },
+    {
+       "chainring": 52,
+        "cog": 0
     },
     {
        "chainring": 0,
