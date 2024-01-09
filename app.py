@@ -22,6 +22,10 @@ input_data_examples = [
     {
        "chainring": 52,
         "cog": 0
+    },
+    {
+       "chainring": 0,
+        "cog": 0
     }
 ]
 
