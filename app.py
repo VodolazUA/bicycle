@@ -1,11 +1,14 @@
 
 class Gear:
     
-    @classmethod
-    def ratio(cls, chainring: int, cog: int) -> float:
+    def __init__(self, chainring: int, cog: int):
+        self.chainring = chainring
+        self.cog = cog
+
+    def ratio(self) -> float:
         
         try:
-            ratio = round(chainring / cog, 2)
+            ratio = round(self.chainring / self.cog, 2)
         except ZeroDivisionError:
             return 0
         else:
@@ -36,5 +39,9 @@ input_data_examples = [
 ]
 
 for data in input_data_examples:
-    ratio_res = Gear.ratio(**data)
-    print(ratio_res)
+    
+    new_gear = Gear(**data)
+
+    print(
+        new_gear.ratio()
+    )
