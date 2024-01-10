@@ -6,26 +6,21 @@ class Bicycle:
         self.rear_wheel = None
         self.gear = None
     
-    """
-    params:
-        type - "f"-fron or "r"-rear
-        rim_diameter - rim diameter in inches
-        tire_height - tire height in inches 
-    """
-    def setup_wheel(self, type: str, rim_diameter: float, tire_height: float):
+    def setup_wheels(self, front_wheel=None, rear_wheel=None):
         
-        if type == "f":
-            self.front_wheel = Wheel(rim_diameter, tire_height)
-        elif type == "r":
-            self.rear_wheel = Wheel(rim_diameter, tire_height)
-    
+        if front_wheel is not None:
+            self.front_wheel = front_wheel
+        
+        if rear_wheel is not None:
+            self.rear_wheel = rear_wheel
+            
     def setup_gear(self, chainring: int, cog: int):
         self.gear = Gear(chainring, cog)
 
     def gear_inches(self):
         
         try:
-            result = self.rear_wheel.wheel_diameter * self.gear.ratio()
+            result = round(self.rear_wheel.wheel_diameter * self.gear.ratio(), 2)
         except TypeError:
             result = 0
         except AttributeError:
@@ -60,7 +55,8 @@ class Gear:
 
 bike1 = Bicycle()
 bike1.setup_gear(52, 11)
-bike1.setup_wheel("r", 27, 0.5)
+bike1.setup_wheels(rear_wheel=Wheel(27, 0.7)) # лише заднє колесо
+# bike1.setup_wheels(Wheel(27, 0.5), Wheel(27, 0.7)) # два колеса
 
 print(
     bike1.gear_inches()
