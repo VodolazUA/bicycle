@@ -1,11 +1,4 @@
 
-# передавальне відношення в дюймах (gear_inches).
-# Для його обчислення використовується така формула:
-#   gear_inches = діаметр колеса (wheel_diameter) × передавальне відношення (gear_ratio),
-# де
-# wheel_diameter (діаметр колеса) = 
-#       діаметр обода (rim_diameter) + подвійний діаметр (висота) шини (twice_tire_diameter)
-
 class Bicycle:
     
     def __init__(self):
