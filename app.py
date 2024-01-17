@@ -13,6 +13,11 @@ class Bicycle:
             self.rear_wheel.wheel_diameter * self.gear.ratio(),
             2
         )
+    
+    def circumference(self, wheel):
+        return wheel.wheel_diameter * 3.1415
+
+    
 
 
 class Wheel:
@@ -49,5 +54,5 @@ bike1 = Bicycle(
 )
 
 print(
-    bike1.gear_inches()
+    bike1.circumference(bike1.front_wheel)
 )
