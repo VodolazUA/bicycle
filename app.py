@@ -1,3 +1,5 @@
+from math import pi
+
 
 class Bicycle:
     
@@ -15,7 +17,7 @@ class Bicycle:
         )
     
     def circumference(self, wheel):
-        return wheel.wheel_diameter * 3.1415
+        return wheel.wheel_diameter * pi
 
     
 
