@@ -1,4 +1,4 @@
-from math import pi
+PI = 3.14159265359
 
 
 class Bicycle:
@@ -16,14 +16,6 @@ class Bicycle:
             2
         )
     
-    def circumference(self, wheel):
-        return round(
-            wheel.wheel_diameter * pi,
-            2
-        )
-
-    
-
 
 class Wheel:
 
@@ -32,6 +24,13 @@ class Wheel:
         self.rim_diameter = rim_diameter
         self.tire_hight = tire_height
         self.wheel_diameter = rim_diameter + (tire_height * 2)
+    
+    def circumference(self):
+        
+        return round(
+            self.wheel_diameter * PI,
+            2
+        )
         
 
 class Gear:
@@ -59,5 +58,5 @@ bike1 = Bicycle(
 )
 
 print(
-    bike1.circumference(bike1.front_wheel)
+    bike1.front_wheel.circumference()
 )
