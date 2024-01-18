@@ -17,7 +17,10 @@ class Bicycle:
         )
     
     def circumference(self, wheel):
-        return wheel.wheel_diameter * pi
+        return round(
+            wheel.wheel_diameter * pi,
+            2
+        )
 
     
 
